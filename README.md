@@ -1,0 +1,1 @@
+# sample-azure-functions-python-system-managed-id-sql-database
