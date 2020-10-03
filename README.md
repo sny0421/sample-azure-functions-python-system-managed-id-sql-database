@@ -30,10 +30,10 @@ CREATE TABLE test(id NCHAR(5) PRIMARY KEY, name NVARCHAR(256))
 クエリ エディターに次のクエリを入力し、Azure Function へのアクセス権を付与します。
 
 ```
-CREATE USER "sample-azfunc-mid" FROM EXTERNAL PROVIDER;
-ALTER ROLE db_datareader ADD MEMBER "sample-azfunc-mid";
-ALTER ROLE db_datawriter ADD MEMBER "sample-azfunc-mid";
-ALTER ROLE db_ddladmin ADD MEMBER "sample-azfunc-mid";
+CREATE USER [azure-function-app-name] FROM EXTERNAL PROVIDER;
+ALTER ROLE db_datareader ADD MEMBER [azure-function-app-name];
+ALTER ROLE db_datawriter ADD MEMBER [azure-function-app-name];
+ALTER ROLE db_ddladmin ADD MEMBER [azure-function-app-name];
 ```
 
 
