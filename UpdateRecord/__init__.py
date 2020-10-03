@@ -36,6 +36,10 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         logging.info('finished')
     except BaseException as error:
         logging.info('An exception occurred: {}'.format(error))
+        return func.HttpResponse(
+            'An exception occurred: {}'.format(error),
+            status_code=200
+        )
     return func.HttpResponse(
         "UserID {} updated.".format(db_id),
         status_code=200
