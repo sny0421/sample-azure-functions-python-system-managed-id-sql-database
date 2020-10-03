@@ -20,7 +20,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     
     try:
         # Get access token
-        token_struct = sdc.get_sql_access
+        token_struct = sdc.get_sql_access_token()
         # Load environment variables
         driver = os.environ['SQL_DRIVER']
         sql_server = os.environ['SQL_SERVER']
@@ -40,6 +40,6 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             status_code=200
         )
     return func.HttpResponse(
-        'record: '+row[0]+'userName: '+row[1],
+        'record: '+row[0]+' userName: '+row[1],
         status_code=200
     )

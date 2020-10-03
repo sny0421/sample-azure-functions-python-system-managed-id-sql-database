@@ -20,7 +20,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     
     try:
         # Get access token
-        token_struct = sdc.get_sql_access
+        token_struct = sdc.get_sql_access_token()
         # Load environment variables
         driver = os.environ['SQL_DRIVER']
         sql_server = os.environ['SQL_SERVER']
